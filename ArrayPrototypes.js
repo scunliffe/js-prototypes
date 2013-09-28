@@ -1,3 +1,7 @@
+Array.prototype.clone = function(){
+	return this.slice(0);
+};
+
 Array.prototype.remove = function(from, to){
   var rest = this.slice((to || from) + 1 || this.length);
   this.length = from < 0 ? this.length + from : from;
@@ -7,7 +11,7 @@ Array.prototype.remove = function(from, to){
 /*
   This is just for "jumbling up" contents of an array.
   Do not use this when a pure, fair randomization is needed.
-/*
+*/
 Array.prototype.randomize = function(){
 	var len = this.length;
 	var a,b,j;
