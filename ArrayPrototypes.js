@@ -2,6 +2,10 @@ Array.prototype.clone = function(){
 	return this.slice(0);
 };
 
+Array.prototype.deepClone = function(){
+	return JSON.parse(JSON.stringify(this));
+};
+
 Array.prototype.remove = function(from, to){
   var rest = this.slice((to || from) + 1 || this.length);
   this.length = from < 0 ? this.length + from : from;
