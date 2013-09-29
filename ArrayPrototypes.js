@@ -107,6 +107,18 @@ Array.prototype.swap = function(idx1, idx2){
 	this[idx2] = a;
 };
 
+Array.prototype.unique = function(){
+	var arr = this.concat();
+	for(var i=0;i<arr.length;++i){
+		for(var j=i+1;j<arr.length;++j){
+			if(arr[i] === arr[j]){
+				arr.splice(j--, 1);
+			}
+		}
+	}
+	return arr;
+};
+
 
 //Utilities
 function randomNumber(min, max){
