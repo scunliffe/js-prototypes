@@ -21,6 +21,29 @@ if(typeof(Array.prototype.indexOf) == 'undefined'){
 	};
 }
 
+
+Array.prototype.next = function(idx){
+	idx++;
+	if(idx == this.length){
+		return this[0];
+	} else {
+		return this[idx];
+	}
+};
+
+Array.prototype.prev = function(idx){
+	idx--;
+	if(idx == -1){
+		return this[this.length-1];
+	} else {
+		return this[idx];
+	}
+};
+
+
+
+
+
 Array.prototype.remove = function(from, to){
   var rest = this.slice((to || from) + 1 || this.length);
   this.length = from < 0 ? this.length + from : from;
