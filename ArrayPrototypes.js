@@ -43,6 +43,13 @@ Array.prototype.randomize = function(){
 	}
 };
 
+Array.prototype.swap = function(idx1, idx2){
+	var a = this[idx1];
+	var b = this[idx2];
+	this[idx1] = b;
+	this[idx2] = a;
+};
+
 
 
 
