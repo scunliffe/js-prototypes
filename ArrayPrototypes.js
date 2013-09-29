@@ -14,6 +14,10 @@ Array.prototype.clone = function(){
 	return this.slice(0);
 };
 
+Array.prototype.contains = function(val){
+	return (this.indexOf(val) != -1);
+};
+
 Array.prototype.deepClone = function(){
 	return JSON.parse(JSON.stringify(this));
 };
