@@ -1,3 +1,15 @@
+Array.prototype.absMax = function(){
+	return Math.max.apply({}, Math.abs(this));
+};
+
+Array.prototype.absMin = function(){
+	return Math.min.apply({}, Math.abs(this));
+};
+
+Array.prototype.avg = function(){
+	return this.sum() / this.length;
+};
+
 Array.prototype.clone = function(){
 	return this.slice(0);
 };
@@ -20,6 +32,15 @@ if(typeof(Array.prototype.indexOf) == 'undefined'){
 		return -1;
 	};
 }
+
+Array.prototype.max = function(){
+	return Math.max.apply({}, this);
+};
+
+Array.prototype.min = function(){
+	return Math.min.apply({}, this);
+};
+
 
 
 Array.prototype.next = function(idx){
@@ -66,14 +87,25 @@ Array.prototype.randomize = function(){
 	}
 };
 
+Array.prototype.sortNumerically = function(){
+	return this.sort(function(a, b){return a - b;});
+};
+
+
+Array.prototype.sum = function(){
+	var sum = 0;
+	for(var i=0;i<this.length;i++){
+		sum += this[i];
+	}
+	return sum;
+};
+
 Array.prototype.swap = function(idx1, idx2){
 	var a = this[idx1];
 	var b = this[idx2];
 	this[idx1] = b;
 	this[idx2] = a;
 };
-
-
 
 
 //Utilities
