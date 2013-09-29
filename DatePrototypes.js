@@ -31,3 +31,12 @@ Date.prototype.isBefore = function(otherDate){
 	}
 	return (this.getTime() < otherDate.getTime());
 };
+
+Date.prototype.now = function(){
+	return new Date();
+};
+
+
+Date.prototype.today = function(){
+	return new Date().clearTime();
+};
