@@ -6,6 +6,21 @@ Array.prototype.deepClone = function(){
 	return JSON.parse(JSON.stringify(this));
 };
 
+if(typeof(Array.prototype.indexOf) == 'undefined'){
+	Array.prototype.indexOf = function(val, startAt){
+		var idx = 0;
+		if(startAt != null && (startAt >= 0 && startAt < this.length)){
+			idx = startAt;
+		}
+		for(var i=idx;i<this.length;i++){
+			if(this[i] == val){
+				return i;
+			}
+		}
+		return -1;
+	};
+}
+
 Array.prototype.remove = function(from, to){
   var rest = this.slice((to || from) + 1 || this.length);
   this.length = from < 0 ? this.length + from : from;
