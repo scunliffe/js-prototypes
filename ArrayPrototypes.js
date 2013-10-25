@@ -122,6 +122,24 @@ Array.prototype.unique = function(){
 	}
 	return arr;
 };
+//alternative unique method
+if(typeof(Array.prototype.unique) == 'undefined'){
+	Array.prototype.unique = function(){
+		var obj = {};
+		var ret = [];
+		var item;
+		for(var i=0,aLen=this.length;i<aLen;i++){
+			item = this[i];
+			if(!obj[item]){
+				ret.push(item);
+				obj[item] = 1;
+			}
+		}
+		obj = null;
+		return ret;
+	};
+}
+
 
 
 //Utilities
