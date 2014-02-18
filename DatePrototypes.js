@@ -57,6 +57,9 @@ Date.prototype.isAfter = function(otherDate){
 Date.prototype.isBefore = function(otherDate){
 	return (this.getDateDiff(otherDate) < 0);
 };
+Date.prototype.isWeekDay = function(){
+	return ((this.getDay() != 0) && (this.getDay() != 6));
+};
 
 Date.prototype.getDateDiff = function(otherDate){
 	if(otherDate == null){
