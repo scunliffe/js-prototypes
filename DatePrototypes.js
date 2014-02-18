@@ -1,6 +1,6 @@
 //Properties
-Date.dayNames = 'Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday'.split('|');
-Date.monthNames = 'January|February|March|April|May|June|July|August|September|October|November|December'.split('|');
+Date.DAY_NAMES = 'Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday'.split('|');
+Date.MONTH_NAMES = 'January|February|March|April|May|June|July|August|September|October|November|December'.split('|');
 
 
 
@@ -10,11 +10,11 @@ Date.prototype.clearTime = function(){
 };
 
 Date.prototype.getDayName = function(){ 
-	return Date.dayNames[this.getDay()];
+	return Date.DAY_NAMES[this.getDay()];
 };
 
 Date.prototype.getMonthName = function(){
-	return Date.monthNames[this.getMonth()];
+	return Date.MONTH_NAMES[this.getMonth()];
 };
 
 
