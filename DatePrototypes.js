@@ -41,6 +41,13 @@ Date.prototype.getMonthName = function(){
 Date.prototype.getMonthNameAbbr = function(){
 	return Date.getMonthName().slice(0, 3);
 };
+//Weeks run as full weeks (Sun-Sat) from on/after Jan 1st TODO: I'm not sure if I like this
+Date.prototype.getWeekOfYear = function(){
+	var janFirst = new Date(this.getFullYear(), 0, 1);
+	var janFirstDayOfWeek = janFirst.getDay();//0=Su,1=Mo,2=Tu,3=We,4=Th,5=Fr,6=Sa
+	var startOffset = (janFirstDayOfWeek == 0) ? 0 : (7 - janFirstDayOfWeek);
+	return Math.ceil((this.getDayOfYear() - startOffset) / 7);
+};
 
 
 Date.prototype.isAfter = function(otherDate){
