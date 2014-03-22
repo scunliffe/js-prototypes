@@ -1,7 +1,8 @@
 //Properties
-Date.DAY_NAMES = 'Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday'.split('|');
-Date.MONTH_NAMES = 'January|February|March|April|May|June|July|August|September|October|November|December'.split('|');
-Date.MS_PER_DAY = (1000 * 60 * 60 * 24);//ms * sec * min * hours
+Date.prototype.DAY_NAMES = 'Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday'.split('|');
+Date.prototype.MONTH_NAMES = 'January|February|March|April|May|June|July|August|September|October|November|December'.split('|');
+Date.prototype.DAYS_PER_MONTH = '31|29|31|30|31|30|31|31|30|31|30|31'.split('|');
+Date.prototype.MS_PER_DAY = (1000 * 60 * 60 * 24);//ms * sec * min * hours
 
 
 
@@ -68,6 +69,18 @@ Date.prototype.getDateDiff = function(otherDate){
 	return this.getTime() - otherDate.getTime();
 };
 //TODO: add getDaysBetween?
+Date.prototype.getDaysInMonth = function(monthIndex, year){
+	if(monthIndex == 1){
+		var isLeap = (new Date(year, 1, 29).getMonth() === 1);
+		if(isLeap){
+			return 29;
+		} else {
+			return 28;
+		}
+	} else {
+		return this.DAYS_PER_MONTH[monthIndex];
+	}
+};
 
 Date.prototype.now = function(){
 	return new Date();
@@ -77,5 +90,3 @@ Date.prototype.now = function(){
 Date.prototype.today = function(){
 	return new Date().clearTime();
 };
-
-
