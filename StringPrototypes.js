@@ -14,6 +14,11 @@ String.prototype.replaceKeywords = function(replacements){
 	}
 	return str;
 };
+
 String.prototype.reverse = function(){
 	return this.split('').reverse().join('');
 };
+
+String.prototype.contains = function(str){
+	return this.indexOf(it) != -1;
+}
