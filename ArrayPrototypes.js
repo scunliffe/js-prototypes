@@ -45,8 +45,6 @@ Array.prototype.min = function(){
 	return Math.min.apply({}, this);
 };
 
-
-
 Array.prototype.next = function(idx){
 	idx++;
 	if(idx == this.length){
@@ -64,10 +62,6 @@ Array.prototype.prev = function(idx){
 		return this[idx];
 	}
 };
-
-
-
-
 
 Array.prototype.remove = function(from, to){
 	var rest = this.slice((to || from) + 1 || this.length);
@@ -107,7 +101,6 @@ Array.prototype.shuffle = function(){
 Array.prototype.sortNumerically = function(){
 	return this.sort(function(a, b){return a - b;});
 };
-
 
 Array.prototype.sum = function(){
 	var sum = 0;
@@ -152,7 +145,6 @@ if(typeof(Array.prototype.unique) == 'undefined'){
 		return ret;
 	};
 }
-
 
 
 //Utilities
