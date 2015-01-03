@@ -70,9 +70,9 @@ Array.prototype.prev = function(idx){
 
 
 Array.prototype.remove = function(from, to){
-  var rest = this.slice((to || from) + 1 || this.length);
-  this.length = from < 0 ? this.length + from : from;
-  return this.push.apply(this, rest);
+	var rest = this.slice((to || from) + 1 || this.length);
+	this.length = from < 0 ? this.length + from : from;
+	return this.push.apply(this, rest);
 };
 
 /*
@@ -88,6 +88,19 @@ Array.prototype.randomize = function(){
 		b = this[j];
 		this[i] = b;
 		this[j] = a;
+	}
+};
+
+//Knuth/Fisher-Yates style shuffle
+Array.prototype.shuffle = function(){
+	var marker = this.length;
+	var temp;
+	var idx;
+	while(marker){
+		idx = randomNumber(0, (marker-- - 1));
+		temp = this[marker];
+		this[marker] = this[idx];
+		this[idx] = temp;
 	}
 };
 
