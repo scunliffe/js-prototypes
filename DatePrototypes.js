@@ -25,22 +25,22 @@ Date.prototype.addWeeks = function(numWeeks){
 //TODO: get date +/- business days?
 
 Date.prototype.getDayName = function(){ 
-	return Date.DAY_NAMES[this.getDay()];
+	return this.DAY_NAMES[this.getDay()];
 };
 Date.prototype.getDayNameAbbr = function(){
-	return Date.getDayName().slice(0, 3);
+	return this.getDayName().slice(0, 3);
 };
 Date.prototype.getDayOfYear = function(){
 	var janFirst = new Date(this.getFullYear(), 0, 1);
-	return Math.ceil((this.getTime() - janFirst.getTime()) / Date.MS_PER_DAY);
+	return Math.ceil((this.getTime() - janFirst.getTime()) / this.MS_PER_DAY);
 };
 
 
 Date.prototype.getMonthName = function(){
-	return Date.MONTH_NAMES[this.getMonth()];
+	return this.MONTH_NAMES[this.getMonth()];
 };
 Date.prototype.getMonthNameAbbr = function(){
-	return Date.getMonthName().slice(0, 3);
+	return this.getMonthName().slice(0, 3);
 };
 //Weeks run as full weeks (Sun-Sat) from on/after Jan 1st TODO: I'm not sure if I like this
 Date.prototype.getWeekOfYear = function(){
