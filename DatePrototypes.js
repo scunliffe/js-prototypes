@@ -11,6 +11,10 @@ Date.prototype.clearTime = function(){
 	return this.setHours(0).setMinutes(0).setSeconds(0).setMilliseconds(0);
 };
 
+Date.prototype.copy = function(){
+	return new Date(this.getTime());//create a de-referenced copy
+};
+
 Date.prototype.addHours = function(numHours){
 	return this.setHours(this.getHours() + numHours);
 };
@@ -35,6 +39,14 @@ Date.prototype.getDayOfYear = function(){
 	return Math.ceil((this.getTime() - janFirst.getTime()) / this.MS_PER_DAY);
 };
 
+Date.prototype.getDaysBetween = function(otherDate){
+	var thisDateTime = this.copy();
+	var otherDateTime = otherDate.copy();
+	var thisDate = thisDateTime.clearTime();
+	var otherDate = otherDateTime.clearTime();
+	var diff = otherDate.getTime() - thisDate.getTime();
+	return (diff / this.MS_PER_DAY);
+};
 
 Date.prototype.getMonthName = function(){
 	return this.MONTH_NAMES[this.getMonth()];
