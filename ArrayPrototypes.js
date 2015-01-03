@@ -117,6 +117,10 @@ Array.prototype.swap = function(idx1, idx2){
 	this[idx2] = a;
 };
 
+Array.prototype.union = function(otherArray){ 
+	return this.concat(otherArray).unique();
+};
+
 Array.prototype.unique = function(){
 	var arr = this.concat();
 	for(var i=0;i<arr.length;++i){
@@ -129,6 +133,7 @@ Array.prototype.unique = function(){
 	return arr;
 };
 //alternative unique method
+/*
 if(typeof(Array.prototype.unique) == 'undefined'){
 	Array.prototype.unique = function(){
 		var obj = {};
@@ -145,6 +150,7 @@ if(typeof(Array.prototype.unique) == 'undefined'){
 		return ret;
 	};
 }
+*/
 
 
 //Utilities
