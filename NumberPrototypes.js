@@ -13,6 +13,10 @@ Number.prototype.pad = function(padToLength, character){
 	return (padding + num).slice(-padding.length);
 };
 
-Number.prototype.toRad = function(){
-	return this * Math.PI / 180;
+Number.prototype.toDegrees = function(){
+	return this * (180 / Math.PI);
+};
+
+Number.prototype.toRadians = function(){
+	return this * (Math.PI / 180);
 };
