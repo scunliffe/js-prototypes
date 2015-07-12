@@ -10,9 +10,10 @@ String.prototype.toXMLDOM = function(){
 	}
 	return xml;
 };
+
 String.prototype.trim = function(){
 	return this.replace(/^\s*/, "").replace(/\s*$/, "");
-}
+};
 
 String.prototype.replaceAll = function(search, replacement){
 	var str = this;
@@ -26,6 +27,7 @@ String.prototype.replaceKeywords = function(replacements){
 	}
 	return str;
 };
+
 String.prototype.reverse = function(){
 	return this.split('').reverse().join('');
 };
