@@ -15,6 +15,10 @@ String.prototype.trim = function(){
 	return this.replace(/^\s*/, "").replace(/\s*$/, "");
 };
 
+String.prototype.cleanWhitespace = function(){
+	return this.trim().replace(/(\s\s+)/g, " ");
+};
+
 String.prototype.replaceAll = function(search, replacement){
 	var str = this;
 	return str.split(search).join(replacement);
