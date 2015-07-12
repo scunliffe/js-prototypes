@@ -36,6 +36,10 @@ String.prototype.reverse = function(){
 	return this.split('').reverse().join('');
 };
 
+String.prototype.sortLines = function(){
+	return this.split(/\n/).sort().join('\n');
+};
+
 String.prototype.toCapitalCase = function(){
 	if(this.length < 2){
 		return this.toUpperCase();
