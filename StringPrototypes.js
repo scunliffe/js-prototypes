@@ -30,6 +30,13 @@ String.prototype.reverse = function(){
 	return this.split('').reverse().join('');
 };
 
+String.prototype.toCapitalCase = function(){
+	if(this.length < 2){
+		return this.toUpperCase();
+	}
+	return this.substr(0,1).toUpperCase() + this.substr(1);
+};
+
 String.prototype.toSentenceCase = function(){
 	var words = this.split(' ');
 	var word;
