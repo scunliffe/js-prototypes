@@ -98,6 +98,10 @@ Date.prototype.now = function(){
 	return new Date();
 };
 
+Date.prototype.stamp = function(){
+	return new Date().getTime();
+};
+
 Date.prototype.today = function(){
 	return new Date().clearTime();
 };
