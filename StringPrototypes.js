@@ -29,3 +29,18 @@ String.prototype.replaceKeywords = function(replacements){
 String.prototype.reverse = function(){
 	return this.split('').reverse().join('');
 };
+
+String.prototype.toSentenceCase = function(){
+	var words = this.split(' ');
+	var word;
+	for(var i=0,wLen=words.length;i<wLen;i++){
+		word = words[i];
+		if(word.length < 2){
+			word = word.toUpperCase();
+		} else {
+			word = word.substr(0,1).toUpperCase() + word.substr(1);
+		}
+		words[i] = word;
+	}
+	return words.join(' ');
+};
