@@ -14,6 +14,16 @@ Array.prototype.clone = function(){
 	return this.slice(0);
 };
 
+Array.prototype.clean = function(delVal){
+	for(var i=0;i<this.length;i++){
+		if(this[i] == delVal){
+			this.splice(i, 1);
+			i--;
+		}
+	}
+	return this;
+};
+
 Array.prototype.contains = function(val){
 	return (this.indexOf(val) != -1);
 };
