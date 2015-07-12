@@ -46,21 +46,17 @@ Array.prototype.min = function(){
 };
 
 Array.prototype.next = function(idx){
-	idx++;
-	if(idx == this.length){
+	if(idx == (this.length -1)){
 		return this[0];
-	} else {
-		return this[idx];
 	}
+	return this[idx++];
 };
 
 Array.prototype.prev = function(idx){
-	idx--;
-	if(idx == -1){
+	if(idx == 0){
 		return this[this.length-1];
-	} else {
-		return this[idx];
 	}
+	return this[idx--];
 };
 
 Array.prototype.remove = function(from, to){
