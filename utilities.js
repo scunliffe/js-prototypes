@@ -1,3 +1,9 @@
+function isDefined(val){
+	return !(typeof(val) == 'undefined');
+};
+
+
+
 function xmlToJSON(xml){
 	var obj = {};
 	if(xml.nodeType == 1){//Node
