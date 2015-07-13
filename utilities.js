@@ -1,3 +1,12 @@
+function extend(obj, props){
+	for(var key in props){
+		if(props.hasOwnProperty(key)){
+			obj[key] = props[key];
+		}
+	}
+	return obj;
+}
+
 function generateRandomString(size, characters){
 	var chars = characters || 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 	var charsMax = chars.length - 1;
