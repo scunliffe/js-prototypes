@@ -8,9 +8,21 @@ function generateRandomString(size, characters){
 	return strArr.join('');
 }
 
+function getMemberCount(obj){
+	var count = 0;
+	for(var x in obj){
+		count++;
+	}
+	return count;
+}
+
 function isDefined(val){
 	return !(typeof(val) == 'undefined');
-};
+}
+
+function isObjectEmpty(obj){
+	return !(getMemberCount(obj));
+}
 
 function randomNumber(min, max){
 	var rnd = Math.floor((Math.random()*((max+1)-min))+min);
@@ -50,4 +62,4 @@ function xmlToJSON(xml){
 		}
 	}
 	return obj;
-};
+}
