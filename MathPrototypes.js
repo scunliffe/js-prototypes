@@ -6,6 +6,15 @@ Math.prototype.ONE_MILLION  = 1000000;
 Math.prototype.ONE_BILLION  = 1000000000;
 Math.prototype.ONE_TRILLION = 1000000000000;
 
+Math.prototype.clamp = function(num, min, max){
+	if(num < min){
+		return min;
+	} else if(num > max){
+		return max;
+	}
+	return num;
+};
+
 //Render pretty numbers:
 //4721 = 4.7K
 //3638473 = 3.6M
