@@ -7,6 +7,17 @@ function extend(obj, props){
 	return obj;
 }
 
+//create a pseudo GUID value
+function generateGUID(){
+	var chars = '1234567890ABCDEF';
+	var guid = generateRandomString(8, chars) + '-' +
+		generateRandomString(4, chars) + '-' +
+		generateRandomString(4, chars) + '-' +
+		generateRandomString(4, chars) + '-' +
+		generateRandomString(12, chars);
+	return guid;
+}
+
 function generateRandomString(size, characters){
 	var chars = characters || 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 	var charsMax = chars.length - 1;
