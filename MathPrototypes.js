@@ -45,6 +45,14 @@ Math.prototype.getPrettyNumber = function(num){
 	return Math.round((num / denominator), 1) + suffix;
 };
 
+
+Math.prototype.inRange = function(num, min, max){
+	if(num < min || num > max){
+		return false;
+	} 
+	return true;
+};
+
 Math.prototype.toDeg = function(rad){
 	return rad * this.ONE_EIGHTY_OVER_PI;
 };
