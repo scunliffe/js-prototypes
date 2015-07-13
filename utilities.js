@@ -1,8 +1,21 @@
+function generateRandomString(size, characters){
+	var chars = characters || 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+	var charsMax = chars.length - 1;
+	var strArr = [];
+	for(var i=0;i<size;i++){
+		strArr.push(chars[randomNumber(0, charsMax)]);
+	}
+	return strArr.join('');
+}
+
 function isDefined(val){
 	return !(typeof(val) == 'undefined');
 };
 
-
+function randomNumber(min, max){
+	var rnd = Math.floor((Math.random()*((max+1)-min))+min);
+	return rnd;
+}
 
 function xmlToJSON(xml){
 	var obj = {};
