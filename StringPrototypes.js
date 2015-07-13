@@ -6,6 +6,10 @@ String.prototype.deleteEmptyLines = function(){
 	return this.split('\n').filter(function(n){return n != '';}).join('\n');
 };
 
+String.prototype.escapeHtml = function(){
+	return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+};
+
 String.prototype.replaceAll = function(search, replacement){
 	var str = this;
 	return str.split(search).join(replacement);
