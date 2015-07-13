@@ -32,6 +32,17 @@ Array.prototype.deepClone = function(){
 	return JSON.parse(JSON.stringify(this));
 };
 
+if(typeof(Array.prototype.filter) == 'undefined'){
+	Array.prototype.filter = function(filterFunction){
+		for(var i=0;i<this.length;i++){
+			if(filterFunction(this[i])){
+				this.splice(i, 1);
+				i--;
+			}
+		}
+	};
+}
+
 if(typeof(Array.prototype.indexOf) == 'undefined'){
 	Array.prototype.indexOf = function(val, startAt){
 		var idx = 0;
