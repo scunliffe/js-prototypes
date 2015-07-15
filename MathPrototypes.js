@@ -15,6 +15,14 @@ Math.prototype.clamp = function(num, min, max){
 	return num;
 };
 
+Math.prototype.createRange = function(start, stop){
+	var ret = [];
+	for(var i=start,i<stop+1;i++){
+		ret.push(i);
+	}
+	return ret;
+};
+
 //Render pretty numbers:
 //4721 = 4.7K
 //3638473 = 3.6M
