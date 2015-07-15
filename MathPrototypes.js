@@ -45,6 +45,15 @@ Math.prototype.getPrettyNumber = function(num){
 	return Math.round((num / denominator), 1) + suffix;
 };
 
+if(typeof(Math.prototype.hypot) == 'undefined'){
+	Math.prototype.hypot = function(){
+		var val, ret = 0, args = arguments, i = args.length;
+		while(i--){
+			ret += (val = +args[i]) * val;
+		}
+		return Math.sqrt(ret);
+	};
+}
 
 Math.prototype.inRange = function(num, min, max){
 	if(num < min || num > max){
