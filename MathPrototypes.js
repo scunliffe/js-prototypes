@@ -23,6 +23,10 @@ Math.prototype.createRange = function(start, stop){
 	return ret;
 };
 
+Math.prototype.getGreatestCommonDivisor = function(a, b){
+	return b ? Math.getGreatestCommonDivisor(b, a % b) : a;
+};
+
 //Render pretty numbers:
 //4721 = 4.7K
 //3638473 = 3.6M
