@@ -10,6 +10,12 @@ String.prototype.escapeHtml = function(){
 	return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&#39;').replace(/"/g, '&quot;');
 };
 
+if(typeof(String.prototype.repeat) == 'undefined'){
+	String.prototype.repeat = function(count){
+		return Array(count >= 0 ? parseInt(count, 10) + 1 : -1).join(this);
+	};
+}
+
 String.prototype.replaceAll = function(search, replacement){
 	var str = this;
 	return str.split(search).join(replacement);
