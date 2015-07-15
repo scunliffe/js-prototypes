@@ -94,10 +94,12 @@ Date.prototype.getDaysInMonth = function(monthIndex, year){
 	}
 };
 
-Date.prototype.now = function(){
+//changed naming due to conflict with ES5's now implementation
+Date.prototype.getNow = function(){
 	return new Date();
 };
 
+//This is similar to what ES5 returns for Date.now()
 Date.prototype.stamp = function(){
 	return new Date().getTime();
 };
