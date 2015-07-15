@@ -44,6 +44,10 @@ String.prototype.toCapitalCase = function(){
 	return this.substr(0,1).toUpperCase() + this.substr(1);
 };
 
+String.prototype.toCharArray = function(){
+	return this.split('');
+};
+
 String.prototype.toSentenceCase = function(){
 	var words = this.split(' ');
 	var word;
