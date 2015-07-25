@@ -35,24 +35,24 @@ MathUtils.getGreatestCommonDivisor = function(a, b){
 //3638473 = 3.6M
 MathUtils.getPrettyNumber = function(num){
 	var num = num || 0;
-	if(num < Math.ONE_THOUSAND){
+	if(num < MathUtils.ONE_THOUSAND){
 		return '' + num;
 	}
 	var suffix = '';
 	var denominator;
-	if(num < Math.ONE_MILLION){
-		denominator = Math.ONE_THOUSAND;
+	if(num < MathUtils.ONE_MILLION){
+		denominator = MathUtils.ONE_THOUSAND;
 		suffix = 'K';
 	} else {
-		if(num < Math.ONE_BILLION){
-			denominator = Math.ONE_MILLION;
+		if(num < MathUtils.ONE_BILLION){
+			denominator = MathUtils.ONE_MILLION;
 			suffix = 'M';
 		} else {
-			if(num < Math.ONE_TRILLION){
-				denominator = Math.ONE_BILLION;
+			if(num < MathUtils.ONE_TRILLION){
+				denominator = MathUtils.ONE_BILLION;
 				suffix = 'B';
 			} else {
-				denominator = Math.ONE_TRILLION;
+				denominator = MathUtils.ONE_TRILLION;
 				suffix = 'T';
 			}
 		}
@@ -76,9 +76,9 @@ MathUtils.inRange = function(num, min, max){
 };
 
 MathUtils.toDeg = function(rad){
-	return rad * this.ONE_EIGHTY_OVER_PI;
+	return rad * MathUtils.ONE_EIGHTY_OVER_PI;
 };
 
 MathUtils.toRad = function(deg){
-	return deg * this.PI_OVER_ONE_EIGHTY;
+	return deg * MathUtils.PI_OVER_ONE_EIGHTY;
 };
