@@ -94,7 +94,6 @@ DateUtils.getDaysInMonth = function(monthIndex, year){//monthIndex is zero index
 			return 28;
 		}
 	} else {
-		alert(monthIndex);
 		return DateUtils.DAYS_PER_MONTH[monthIndex];
 	}
 };
