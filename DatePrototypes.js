@@ -42,9 +42,9 @@ Date.prototype.getDayOfYear = function(){
 Date.prototype.getDaysBetween = function(otherDate){
 	var thisDateTime = this.copy();
 	var otherDateTime = otherDate.copy();
-	var thisDate = thisDateTime.clearTime();
-	var otherDate = otherDateTime.clearTime();
-	var diff = otherDate.getTime() - thisDate.getTime();
+	var thisDateOnly = thisDateTime.clearTime();
+	var otherDateOnly = otherDateTime.clearTime();
+	var diff = otherDateOnly.getTime() - thisDateOnly.getTime();
 	return (diff / this.MS_PER_DAY);
 };
 
