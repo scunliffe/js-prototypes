@@ -44,6 +44,25 @@ function isObjectEmpty(obj){
 	return !(getMemberCount(obj));
 }
 
+function jsonToCSV(jsonObj){
+	var array = typeof(jsonObj) != 'object' ? JSON.parse(jsonObj) : jsonObj;
+	var csv = '';
+	for(var i=0,aL=array.length;i<aL;i++){
+		var row = [];
+		var cell;
+		for(var index in array[i]){
+			cell = array[i][index];
+			if(typeof(cell) == 'string'){
+				row.push('"' + cell + '"');
+			} else {
+				row.push(cell);
+			}
+		}
+		csv += row.join(',') + '\n';
+	}
+ 	return csv;
+}
+
 function randomNumber(min, max){
 	var rnd = Math.floor((Math.random()*((max+1)-min))+min);
 	return rnd;
