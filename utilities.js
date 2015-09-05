@@ -36,6 +36,14 @@ function getMemberCount(obj){
 	return count;
 }
 
+function getKeyValue(obj, prop, defaultIfUndefined){
+	var val = obj[prop];
+	if(typeof(val) == 'undefined'){
+		val = defaultIfUndefined;
+	}
+	return val;
+};
+
 function isDefined(val){
 	return !(typeof(val) == 'undefined');
 }
