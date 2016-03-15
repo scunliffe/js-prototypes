@@ -20,7 +20,7 @@ MathUtils.clamp = function(num, min, max){
 
 MathUtils.createRange = function(start, stop){
 	var ret = [];
-	for(var i=start,i<stop+1;i++){
+	for(var i=start;i<stop+1;i++){
 		ret.push(i);
 	}
 	return ret;
