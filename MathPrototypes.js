@@ -64,6 +64,12 @@ MathUtils.getPrettyNumber = function(num){
 	return Math.round((num / denominator), 1) + suffix;
 };
 
+MathUtils.getSlopeForLine = function(p1, p2){
+	var rise = (p2.y - p1.y);
+	var run = (p2.x - p1.x);
+	return (rise / run);
+};
+
 MathUtils.hypot = function(){
 	var val, ret = 0, args = arguments, i = args.length;
 	while(i--){
