@@ -43,6 +43,14 @@ if(typeof(Array.prototype.filter) == 'undefined'){
 	};
 }
 
+Array.prototype.flatten = function(){
+	/*
+		Converts: [[1, 2], [], [3], [4, 5]];
+		To: [1,2,3,4,5]
+	*/
+	return [].concat.apply([], this);
+};
+
 if(typeof(Array.prototype.indexOf) == 'undefined'){
 	Array.prototype.indexOf = function(val, startAt){
 		var idx = 0;
