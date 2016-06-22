@@ -52,6 +52,10 @@ function isObjectEmpty(obj){
 	return !(getMemberCount(obj));
 }
 
+function isNumber(val){
+	return !isNaN(parseFloat(val)) && isFinite(val);
+}
+
 function jsonToCSV(jsonObj){
 	var array = typeof(jsonObj) != 'object' ? JSON.parse(jsonObj) : jsonObj;
 	var csv = '';
