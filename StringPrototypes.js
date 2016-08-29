@@ -37,6 +37,17 @@ String.prototype.sortLines = function(){
 	return this.split(/\n/).sort().join('\n');
 };
 
+String.prototype.splice = function(idx, count, add){
+	var str = this;
+	if(idx < 0){
+		idx = str.length + idx;
+		if(idx < 0){
+			idx = 0;
+		}
+	}
+	return str.slice(0, idx) + (add || "") + str.slice(idx + count);
+};
+
 String.prototype.toCapitalCase = function(){
 	if(this.length < 2){
 		return this.toUpperCase();
