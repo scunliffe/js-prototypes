@@ -85,6 +85,10 @@ MathUtils.inRange = function(num, min, max){
 	return true;
 };
 
+MathUtils.lerp = function(min, max, amount){
+	return min + (max - min) * amount;
+};
+
 MathUtils.toDeg = function(rad){
 	return rad * MathUtils.ONE_EIGHTY_OVER_PI;
 };
