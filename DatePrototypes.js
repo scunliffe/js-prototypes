@@ -33,8 +33,12 @@ DateUtils.addDays = function(origDate, numDays){
 DateUtils.addWeeks = function(origDate, numWeeks){
  	return DateUtils.addDays(origDate, numWeeks * 7);
 };
-//TODO: add addMonths/addYears... determine logic... does Feb 14 + 1 month equal Mar 14? or (+3[0|1]) = Mar 16/17?
-
+DateUtils.addMonths = function(origDate, numMonths){
+	return DateUtils.addDays(origDate, numMonths * 30);//TODO: What precision/logic do we want here? e.g. Aug 15 + (30) = Sept 14
+};
+DateUtils.addYears = function(origDate, numYears){
+	return DateUtils.addDays(origDate, numYears * 365);//TODO: What precision/logic do we want here?
+};
 //TODO: get date +/- business days?
 
 DateUtils.getDayName = function(origDate){ 
