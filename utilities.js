@@ -42,7 +42,11 @@ function getKeyValue(obj, prop, defaultIfUndefined){
 		val = defaultIfUndefined;
 	}
 	return val;
-};
+}
+
+function hasSameKeys(a, b){
+	return Object.keys(a).length === Object.keys(b).length && Object.keys(a).every(k => b.hasOwnProperty(k));
+}
 
 function isDefined(val){
 	return !(typeof(val) == 'undefined');
