@@ -110,7 +110,7 @@ Array.prototype.randomize = function(){
 	}
 };
 
-//Knuth/Fisher-Yates style shuffle
+//Knuth/Fisher-Yates style shuffle  (Important notes on shuffling: https://blog.codinghorror.com/the-danger-of-naivete/ )
 Array.prototype.shuffle = function(){
 	var marker = this.length;
 	var temp;
