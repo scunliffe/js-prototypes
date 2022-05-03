@@ -1,0 +1,20 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = tab
+indent_size = 2
+
+# Other Options
+# Create sections to override/match multiple files with brace expansion notation (e.g. *.ini style)
+#[*.{js,html}]
+#
+#add final new line (still haven't found any scenario ever where this is needed/desired)
+#insert_final_newline = true
+#
+#auto trim trailing whitespace
+#trim_trailing_whitespace = true
