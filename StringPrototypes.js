@@ -33,6 +33,10 @@ String.prototype.reverse = function(){
 	return this.split('').reverse().join('');
 };
 
+String.prototype.slugify = function(){
+	return this.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+};
+
 String.prototype.sortLines = function(){
 	return this.split(/\n/).sort().join('\n');
 };
